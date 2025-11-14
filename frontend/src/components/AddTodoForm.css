@@ -1,0 +1,350 @@
+/* Add Todo Form Styles */
+
+.add-todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Form Title */
+.form-title {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 768px) {
+  .form-title {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-title {
+    font-size: 22px;
+  }
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.form-group:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.form-group:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+  .form-group label {
+    font-size: 13px;
+  }
+}
+
+/* Input Wrapper */
+.input-wrapper,
+.textarea-wrapper {
+  display: flex;
+  align-items: flex-start;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .input-wrapper,
+  .textarea-wrapper {
+    border-radius: 14px;
+    padding: 14px 16px;
+    gap: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .input-wrapper,
+  .textarea-wrapper {
+    padding: 16px 18px;
+  }
+}
+
+.input-wrapper:hover,
+.textarea-wrapper:hover {
+  border-color: #dee2e6;
+  background: #f1f3f5;
+}
+
+.input-wrapper.focused,
+.textarea-wrapper.focused {
+  background: #fff;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-icon {
+  font-size: 18px;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (min-width: 768px) {
+  .input-icon {
+    font-size: 20px;
+  }
+}
+
+/* Text Input */
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .input-wrapper input {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+}
+
+.input-wrapper input::placeholder {
+  color: #adb5bd;
+}
+
+/* Textarea */
+.textarea-wrapper {
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.textarea-wrapper textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  font-family: inherit;
+  font-weight: 400;
+  resize: vertical;
+  min-height: 60px;
+}
+
+@media (min-width: 768px) {
+  .textarea-wrapper textarea {
+    padding: 12px 0;
+    font-size: 15px;
+    min-height: 70px;
+  }
+}
+
+.textarea-wrapper textarea::placeholder {
+  color: #adb5bd;
+}
+
+/* Add Todo Button */
+.add-todo-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+@media (min-width: 768px) {
+  .add-todo-button {
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .add-todo-button {
+    padding: 16px;
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
+  }
+}
+
+.add-todo-button span {
+  font-size: 18px;
+  display: block;
+}
+
+.add-todo-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.add-todo-button:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.add-todo-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.add-todo-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.add-todo-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Spinner Animation */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .add-todo-form {
+    gap: 16px;
+  }
+
+  .form-title {
+    font-size: 16px;
+  }
+
+  .input-wrapper,
+  .textarea-wrapper {
+    padding: 11px 12px;
+    border-radius: 10px;
+    gap: 10px;
+  }
+
+  .input-wrapper input,
+  .textarea-wrapper textarea {
+    padding: 8px 0;
+    font-size: 13px;
+  }
+
+  .input-icon {
+    font-size: 16px;
+  }
+
+  .add-todo-button {
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .add-todo-button span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .add-todo-form {
+    gap: 14px;
+  }
+
+  .form-title {
+    font-size: 14px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+  }
+
+  .input-wrapper,
+  .textarea-wrapper {
+    padding: 10px 10px;
+    border-radius: 8px;
+  }
+
+  .input-wrapper input,
+  .textarea-wrapper textarea {
+    padding: 7px 0;
+    font-size: 12px;
+  }
+
+  .input-icon {
+    font-size: 14px;
+  }
+
+  .add-todo-button {
+    padding: 11px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+
+  .add-todo-button span {
+    font-size: 14px;
+  }
+}

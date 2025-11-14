@@ -1,0 +1,301 @@
+/* Navbar Styles */
+
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.6s ease-out;
+  margin-bottom: 30px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .navbar-content {
+    padding: 25px 35px;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-content {
+    padding: 28px 40px;
+  }
+}
+
+/* Brand Section */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  font-size: 28px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .brand-icon {
+    font-size: 32px;
+  }
+}
+
+.brand-name {
+  font-size: 22px;
+  color: #333;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 768px) {
+  .brand-name {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-name {
+    font-size: 26px;
+  }
+}
+
+/* Actions Section */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .navbar-actions {
+    gap: 25px;
+  }
+}
+
+/* User Greeting */
+.user-greeting {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.25);
+  border: 2px solid #fff;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .user-avatar {
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .user-avatar {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.greeting-text {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+  .greeting-text {
+    font-size: 13px;
+  }
+}
+
+.user-name {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 768px) {
+  .user-name {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .user-info {
+    display: none;
+  }
+}
+
+/* Logout Button */
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .logout-button {
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+}
+
+.logout-button span {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .logout-button span {
+    font-size: 18px;
+  }
+}
+
+.logout-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.logout-button:hover::before {
+  left: 100%;
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .navbar {
+    margin-bottom: 20px;
+  }
+
+  .navbar-content {
+    padding: 18px 20px;
+    gap: 12px;
+  }
+
+  .brand-icon {
+    font-size: 24px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .logout-button {
+    padding: 9px 14px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  .logout-button span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    margin-bottom: 15px;
+  }
+
+  .navbar-content {
+    padding: 15px 15px;
+    gap: 10px;
+  }
+
+  .brand-icon {
+    font-size: 20px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .user-avatar {
+    font-size: 24px;
+  }
+
+  .logout-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .logout-button span {
+    font-size: 12px;
+  }
+}
