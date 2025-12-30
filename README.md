@@ -1,6 +1,5 @@
 # Todo App
 
-This is my submission for the IntelliSQR Full Stack Assignment.  
 I built a complete Todo application with authentication and full CRUD using React (TypeScript) on the frontend and Node.js + Express on the backend.
 
 Everything is connected through MongoDB Atlas.
